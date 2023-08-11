@@ -19,7 +19,10 @@ dependencies:
   auto_route: ^7.8.0
 dependency_overrides:
   auto_route:
-    path: ../auto_route
+   git:
+      url: https://github.com/JohnnyRainbow81/auto_route_library_custom.git
+      path: auto_route
+      ref: 7.8.2
 
  
 
