@@ -508,11 +508,20 @@ class _AutoTabsRouterPageViewState extends AutoTabsRouterState with _RouteAwareT
     });
   }
 
+  // void _updatePageController() {
+  //   _pageController = (widget as _AutoTabsRouterPageView).pageController ??
+  //       PageController(
+  //         initialPage: _controller!.activeIndex,
+  //       );
+  // }
   void _updatePageController() {
-    _pageController = (widget as _AutoTabsRouterPageView).pageController ??
-        PageController(
-          initialPage: _controller!.activeIndex,
-        );
+    if ((widget as _AutoTabsRouterPageView).pageController != null) {
+      _pageController = (widget as _AutoTabsRouterPageView).pageController!;
+    } else {
+      _pageController = PageController(
+        initialPage: _controller!.activeIndex,
+      );
+    }
   }
 
   @override
